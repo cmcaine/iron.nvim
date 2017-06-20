@@ -27,7 +27,7 @@ endif
 
 function! IronWatchFile(fname, command) abort
   augroup IronWatch
-    exec "autocmd BufWritePost ".a:fname." call IronSend(".a:command.")"
+    exec "autocmd BufWritePost ".a:fname." call IronSend('".a:command."')"
   augroup END
 endfunction
 
