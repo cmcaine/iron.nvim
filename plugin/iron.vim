@@ -26,7 +26,9 @@ if !hasmapto('<Plug>(iron-repeat-cmd)')
 endif
 
 function! IronWatchFile(fname, command) abort
-  autocmd IronWatch BufWritePost a:fname call IronSend(a:command)
+  augroup IronWatch
+    autocmd BufWritePost a:fname call IronSend(a:command)
+  augroup END
 endfunction
 
 function! IronUnwatchFile(fname) abort
