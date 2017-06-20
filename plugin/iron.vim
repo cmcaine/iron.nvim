@@ -24,3 +24,11 @@ if !hasmapto('<Plug>(iron-repeat-cmd)')
     nmap cp <Plug>(iron-repeat-cmd)
   endif
 endif
+
+function! IronWatchFile(fname, command) abort
+  autocmd IronWatch BufWritePost a:fname call IronSend(a:command)
+endfunction
+
+function! IronUnwatchFile(fname) abort
+  autocmd! IronWatch BufWritePost a:fname
+endfunction
