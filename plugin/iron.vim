@@ -32,3 +32,5 @@ endfunction
 function! IronUnwatchFile(fname) abort
   autocmd! IronWatch BufWritePost a:fname
 endfunction
+
+command -nargs=* IronWatchCurrentFile call IronWatchFile(expand('%'), <q-args>)
