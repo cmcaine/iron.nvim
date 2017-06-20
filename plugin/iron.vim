@@ -34,3 +34,4 @@ function! IronUnwatchFile(fname) abort
 endfunction
 
 command -nargs=* IronWatchCurrentFile call IronWatchFile(expand('%'), <q-args>)
+command -nargs=* IronUnwatchCurrentFile call IronUnwatchFile(expand('%'))
